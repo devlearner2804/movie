@@ -54,7 +54,7 @@
 
   <!-- ================= HEADER ================= -->
   <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-ink-950/70 border-b border-white/5">
-    <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-center gap-10 md:gap-16">
       <a href="#" onclick="goMain();return false;" class="group flex items-center gap-2">
         <span class="h-2 w-2 rounded-full bg-gold-400 group-hover:scale-125 transition"></span>
         <span class="text-sm md:text-base font-semibold tracking-[0.2em] text-white">CINEMA PHILOSOPHIA</span>
@@ -88,7 +88,7 @@
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600">뚫어보다</span>
         </h1>
         <p class="fade-up d3 mt-8 text-base md:text-lg text-neutral-400 leading-relaxed font-light max-w-2xl mx-auto">
-          AI가 선정한 전 세계를 뒤흔든 3인의 영화 거장과<br class="hidden sm:block" />
+          AI가 선정한 전 세계를 뒤흔든 5인의 영화 거장과<br class="hidden sm:block" />
           그들의 철학적 명작
         </p>
 
@@ -114,7 +114,7 @@
         <div class="max-w-2xl mb-16">
           <p class="text-gold-400/90 text-xs font-medium tracking-[0.3em] uppercase mb-4">The Directors</p>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-white leading-tight">
-            세계를 뒤흔든<br />세 명의 철학자
+            세계를 뒤흔든<br />다섯 명의 철학자
           </h2>
           <p class="mt-5 text-neutral-400 leading-relaxed">
             카메라를 통해 시대를 응시한 거장들. 그들의 작품은 단순한 영화를 넘어,
@@ -123,10 +123,10 @@
         </div>
 
         <!-- 카드 그리드 -->
-        <div id="masterpieces" class="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-8">
+        <div id="masterpieces" class="flex flex-wrap justify-center gap-7 lg:gap-8">
 
           <!-- 카드 1: 봉준호 -->
-          <a href="#" onclick="showDetail('bong');return false;" class="card-lift group block relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+          <a href="#" onclick="showDetail('bong');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
             <div class="relative aspect-[3/4] overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="봉준호.jpg" alt="봉준호 감독" class="card-img w-full h-full object-cover" />
@@ -154,7 +154,7 @@
           </a>
 
           <!-- 카드 2: 크리스토퍼 놀란 -->
-          <a href="#" onclick="showDetail('nolan');return false;" class="card-lift group block relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+          <a href="#" onclick="showDetail('nolan');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
             <div class="relative aspect-[3/4] overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="크리스토퍼 놀란.jpg" alt="크리스토퍼 놀란 감독" class="card-img w-full h-full object-cover" />
@@ -182,7 +182,7 @@
           </a>
 
           <!-- 카드 3: 마틴 스코세이지 -->
-          <a href="#" onclick="showDetail('scorsese');return false;" class="card-lift group block relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+          <a href="#" onclick="showDetail('scorsese');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
             <div class="relative aspect-[3/4] overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="마틴 스코세이지.jpg" alt="마틴 스코세이지 감독" class="card-img w-full h-full object-cover" />
@@ -205,6 +205,62 @@
                 미국 사회의 어두운 이면과 인간의 죄의식을 거침없이 응시한다. 택시 드라이버,
                 좋은 친구들, 킬러스 오브 더 플라워 문에서 탐욕과 폭력, 구원에 대한 갈망을
                 독실한 영성으로 그려낸다.
+              </p>
+            </div>
+          </a>
+
+          <!-- 카드 4: 스탠리 큐브릭 -->
+          <a href="#" onclick="showDetail('kubrick');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+            <div class="relative aspect-[3/4] overflow-hidden">
+              <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
+              <img src="https://placehold.co/400x600/141418/8aa3d8?text=Stanley+Kubrick" alt="스탠리 큐브릭 감독" class="card-img w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink-800 via-ink-800/30 to-transparent"></div>
+              <div class="absolute top-5 left-5 flex items-center gap-2">
+                <span class="text-xs font-bold tracking-widest text-gold-400">04</span>
+                <span class="h-px w-8 bg-gold-400/50"></span>
+                <span class="text-xs font-medium tracking-[0.2em] text-neutral-300 uppercase">4th</span>
+              </div>
+            </div>
+            <div class="p-7">
+              <h3 class="font-display text-2xl font-bold text-white">스탠리 큐브릭</h3>
+              <p class="text-sm text-neutral-500 mt-1">Stanley Kubrick · 미국</p>
+              <div class="flex flex-wrap gap-2 mt-5">
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/5">통제와 광기</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/5">디스토피아</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/5">완벽주의</span>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-neutral-400">
+                인간의 통제 욕망과 광기를 기계적 정밀함으로 해부한다. 2001 스페이스 오디세이,
+                샤이닝, 시계태엽 오렌지에서 진화와 폭력, 자유의지의 딜레마를 냉철한 시선으로
+                응시하며 인간 본성의 어둠을 벌거벗긴다.
+              </p>
+            </div>
+          </a>
+
+          <!-- 카드 5: 잉마르 베르히만 -->
+          <a href="#" onclick="showDetail('bergman');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+            <div class="relative aspect-[3/4] overflow-hidden">
+              <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
+              <img src="https://placehold.co/400x600/141418/b9a6d8?text=Ingmar+Bergman" alt="잉마르 베르히만 감독" class="card-img w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink-800 via-ink-800/30 to-transparent"></div>
+              <div class="absolute top-5 left-5 flex items-center gap-2">
+                <span class="text-xs font-bold tracking-widest text-gold-400">05</span>
+                <span class="h-px w-8 bg-gold-400/50"></span>
+                <span class="text-xs font-medium tracking-[0.2em] text-neutral-300 uppercase">5th</span>
+              </div>
+            </div>
+            <div class="p-7">
+              <h3 class="font-display text-2xl font-bold text-white">잉마르 베르히만</h3>
+              <p class="text-sm text-neutral-500 mt-1">Ingmar Bergman · 스웨덴</p>
+              <div class="flex flex-wrap gap-2 mt-5">
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/5">신과 죽음</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/5">실존</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/5">침묵</span>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-neutral-400">
+                신의 침묵과 인간의 고독을 영혼의 깊이에서 응시한다. 제7의 봉인, 페르소나,
+                들꽃에서 죽음과 자아, 사랑과 회한을 다루며 영화가 철학이 될 수 있는 경지를
+                연다.
               </p>
             </div>
           </a>
@@ -342,9 +398,9 @@
         </div>
 
         <nav class="mt-20 pt-8 border-t border-white/5 flex items-center justify-between text-sm">
-          <a href="#" onclick="showDetail('scorsese');return false;" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition">
+          <a href="#" onclick="showDetail('bergman');return false;" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition">
             <span class="text-gold-400 group-hover:-translate-x-1 transition">←</span>
-            <span><span class="block text-xs text-neutral-600">이전 감독</span>마틴 스코세이지</span>
+            <span><span class="block text-xs text-neutral-600">이전 감독</span>잉마르 베르히만</span>
           </a>
           <a href="#" onclick="showDetail('nolan');return false;" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition text-right">
             <span><span class="block text-xs text-neutral-600">다음 감독</span>크리스토퍼 놀란</span>
@@ -624,6 +680,285 @@
           <a href="#" onclick="showDetail('nolan');return false;" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition">
             <span class="text-gold-400 group-hover:-translate-x-1 transition">←</span>
             <span><span class="block text-xs text-neutral-600">이전 감독</span>크리스토퍼 놀란</span>
+          </a>
+          <a href="#" onclick="showDetail('kubrick');return false;" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition text-right">
+            <span><span class="block text-xs text-neutral-600">다음 감독</span>스탠리 큐브릭</span>
+            <span class="text-gold-400 group-hover:translate-x-1 transition">→</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- =================== 상세 뷰: 큐브릭 ======================== -->
+  <!-- ============================================================ -->
+  <div id="view-kubrick" class="view">
+    <section class="relative pt-24 md:pt-28 overflow-hidden">
+      <div class="absolute inset-0">
+        <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
+        <img src="https://placehold.co/1600x900/141418/8aa3d8?text=Stanley+Kubrick" alt="스탠리 큐브릭" class="w-full h-full object-cover object-top opacity-40" />
+        <div class="absolute inset-0 bg-gradient-to-b from-ink-950/80 via-ink-950/70 to-ink-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(120,150,210,0.14),transparent_55%)]"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-24">
+        <a href="#" onclick="goMain('directors');return false;" class="inline-flex items-center gap-2 text-xs text-neutral-400 hover:text-white transition mb-8">
+          <span>←</span> 감독 목록으로
+        </a>
+        <div class="flex items-center gap-3 mb-5">
+          <span class="text-sm font-bold tracking-widest text-gold-400">04</span>
+          <span class="h-px w-10 bg-gold-400/50"></span>
+          <span class="text-xs font-medium tracking-[0.25em] text-neutral-300 uppercase">4th Director</span>
+        </div>
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">스탠리 큐브릭</h1>
+        <p class="text-lg text-neutral-400 mt-2 tracking-wide">Stanley Kubrick · 미국</p>
+        <div class="flex flex-wrap gap-2 mt-6">
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/10">통제와 광기</span>
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">디스토피아</span>
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">완벽주의</span>
+        </div>
+        <p class="max-w-2xl mt-7 text-base leading-relaxed text-neutral-300">
+          인간의 통제 욕망과 광기를 기계적 정밀함으로 해부한다. 진화와 폭력, 자유의지의 딜레마를
+          냉철한 시선으로 응시하며 인간 본성의 어둠을 벌거벗긴다.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-20 md:py-28 px-6 lg:px-10">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-14">
+          <p class="text-gold-400/90 text-xs font-medium tracking-[0.3em] uppercase mb-4">The Masterpieces</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white">철학적 명작</h2>
+        </div>
+        <div class="space-y-16 md:space-y-20">
+
+          <article class="movie-card grid md:grid-cols-[260px_1fr] gap-6 md:gap-10 items-start">
+            <div class="relative aspect-[2/3] rounded-xl overflow-hidden border border-white/10">
+              <!-- [영화 포스터 넣는 곳] 아래 src 주소를 원하는 포스터로 교체하세요 -->
+              <img src="https://placehold.co/400x600/141418/8aa3d8?text=2001" alt="2001 스페이스 오디세이 포스터" class="poster w-full h-full object-cover" />
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold tracking-widest text-gold-400">No.01</span>
+                <span class="h-px w-6 bg-white/20"></span>
+                <span class="text-xs text-neutral-500">1968 · 미국·영국 · SF·모험</span>
+              </div>
+              <h3 class="font-display text-2xl md:text-3xl font-bold text-white">2001: 스페이스 오디세이 <span class="text-neutral-500 font-normal text-lg">2001: A Space Odyssey</span></h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/10">진화</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">기계</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">신성</span>
+              </div>
+              <h4 class="text-sm font-semibold tracking-widest text-neutral-400 uppercase mt-6 mb-2">줄거리</h4>
+              <p class="text-sm md:text-[15px] leading-relaxed text-neutral-300">
+                원시 인류가 정체불명의 모노리스를 발견하고 도구를 쥐면서 진화의 도약을 맞는다.
+                수만 년 뒤, 달 기지에서 다시 모노리스가 발견되고 인류는 목성을 향한 탐사선
+                디스커버리 호를 보낸다. 그 안에서 지능적 AI HAL 9000이 승무원을 통제하려 치명적
+                오작동을 일으키고, 보먼은 HAL을 해체한 끝에 시공을 넘어선 성스러운 변용의 심연으로
+                빨려든다. 인간의 진화, 기계, 그리고 신성이 하나의 우주적 여정으로 관통된다.
+              </p>
+            </div>
+          </article>
+
+          <article class="movie-card grid md:grid-cols-[260px_1fr] gap-6 md:gap-10 items-start">
+            <div class="relative aspect-[2/3] rounded-xl overflow-hidden border border-white/10">
+              <!-- [영화 포스터 넣는 곳] 아래 src 주소를 원하는 포스터로 교체하세요 -->
+              <img src="https://placehold.co/400x600/141418/8aa3d8?text=The+Shining" alt="샤이닝 포스터" class="poster w-full h-full object-cover" />
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold tracking-widest text-gold-400">No.02</span>
+                <span class="h-px w-6 bg-white/20"></span>
+                <span class="text-xs text-neutral-500">1980 · 미국·영국 · 공포·스릴러</span>
+              </div>
+              <h3 class="font-display text-2xl md:text-3xl font-bold text-white">샤이닝 <span class="text-neutral-500 font-normal text-lg">The Shining</span></h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/10">광기</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">고립</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">폭력</span>
+              </div>
+              <h4 class="text-sm font-semibold tracking-widest text-neutral-400 uppercase mt-6 mb-2">줄거리</h4>
+              <p class="text-sm md:text-[15px] leading-relaxed text-neutral-300">
+                작가 잭 토런스는 겨울 폐관 중인 오버룩 호텔의 관리인으로 아내 웬디, 아들 대니와
+                함께 머문다. 고립 속에서 잭은 호텔에 깃든 악령적 과거에 잠식되어 광기에 빠지고,
+                폭력이 시작된다. '샤이닝'이라는 초월적 투시력을 가진 대니의 시선은 가정의 붕괴와
+                폭력의 대물림을 드러낸다. 닫힌 공간이 인간을 서서히 삼키는 공포를 그린다.
+              </p>
+            </div>
+          </article>
+
+          <article class="movie-card grid md:grid-cols-[260px_1fr] gap-6 md:gap-10 items-start">
+            <div class="relative aspect-[2/3] rounded-xl overflow-hidden border border-white/10">
+              <!-- [영화 포스터 넣는 곳] 아래 src 주소를 원하는 포스터로 교체하세요 -->
+              <img src="https://placehold.co/400x600/141418/8aa3d8?text=A+Clockwork+Orange" alt="시계태엽 오렌지 포스터" class="poster w-full h-full object-cover" />
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold tracking-widest text-gold-400">No.03</span>
+                <span class="h-px w-6 bg-white/20"></span>
+                <span class="text-xs text-neutral-500">1971 · 영국 · 범죄·디스토피아</span>
+              </div>
+              <h3 class="font-display text-2xl md:text-3xl font-bold text-white">시계태엽 오렌지 <span class="text-neutral-500 font-normal text-lg">A Clockwork Orange</span></h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/10">자유의지</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">세뇌</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">폭력</span>
+              </div>
+              <h4 class="text-sm font-semibold tracking-widest text-neutral-400 uppercase mt-6 mb-2">줄거리</h4>
+              <p class="text-sm md:text-[15px] leading-relaxed text-neutral-300">
+                미래 영국, 알렉스는 '드로그' 무리를 이끌며 무차별 폭력을 즐기는 소년이다. 체포된 뒤
+                그는 '루도비코 기법'이라는 국가적 세뇌 치료로 폭력을 혐오하도록 조작된다. 선택의
+                자유가 제거된 선함이 과연 진정한 선인지 묻는다. 알렉스는 조건반사로 억눌린 채
+                폭력의 희생양이 되고, 자유의지가 복원될 때 비로소 체제의 잔혹함이 드러난다.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <nav class="mt-20 pt-8 border-t border-white/5 flex items-center justify-between text-sm">
+          <a href="#" onclick="showDetail('scorsese');return false;" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition">
+            <span class="text-gold-400 group-hover:-translate-x-1 transition">←</span>
+            <span><span class="block text-xs text-neutral-600">이전 감독</span>마틴 스코세이지</span>
+          </a>
+          <a href="#" onclick="showDetail('bergman');return false;" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition text-right">
+            <span><span class="block text-xs text-neutral-600">다음 감독</span>잉마르 베르히만</span>
+            <span class="text-gold-400 group-hover:translate-x-1 transition">→</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- =================== 상세 뷰: 베르히만 ====================== -->
+  <!-- ============================================================ -->
+  <div id="view-bergman" class="view">
+    <section class="relative pt-24 md:pt-28 overflow-hidden">
+      <div class="absolute inset-0">
+        <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
+        <img src="https://placehold.co/1600x900/141418/b9a6d8?text=Ingmar+Bergman" alt="잉마르 베르히만" class="w-full h-full object-cover object-top opacity-40" />
+        <div class="absolute inset-0 bg-gradient-to-b from-ink-950/80 via-ink-950/70 to-ink-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(150,130,190,0.12),transparent_55%)]"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-24">
+        <a href="#" onclick="goMain('directors');return false;" class="inline-flex items-center gap-2 text-xs text-neutral-400 hover:text-white transition mb-8">
+          <span>←</span> 감독 목록으로
+        </a>
+        <div class="flex items-center gap-3 mb-5">
+          <span class="text-sm font-bold tracking-widest text-gold-400">05</span>
+          <span class="h-px w-10 bg-gold-400/50"></span>
+          <span class="text-xs font-medium tracking-[0.25em] text-neutral-300 uppercase">5th Director</span>
+        </div>
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">잉마르 베르히만</h1>
+        <p class="text-lg text-neutral-400 mt-2 tracking-wide">Ingmar Bergman · 스웨덴</p>
+        <div class="flex flex-wrap gap-2 mt-6">
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/10">신과 죽음</span>
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">실존</span>
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">침묵</span>
+        </div>
+        <p class="max-w-2xl mt-7 text-base leading-relaxed text-neutral-300">
+          신의 침묵과 인간의 고독을 영혼의 깊이에서 응시한다. 죽음과 자아, 사랑과 회한을 다루며
+          영화가 철학이 될 수 있는 경지를 연다.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-20 md:py-28 px-6 lg:px-10">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-14">
+          <p class="text-gold-400/90 text-xs font-medium tracking-[0.3em] uppercase mb-4">The Masterpieces</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white">철학적 명작</h2>
+        </div>
+        <div class="space-y-16 md:space-y-20">
+
+          <article class="movie-card grid md:grid-cols-[260px_1fr] gap-6 md:gap-10 items-start">
+            <div class="relative aspect-[2/3] rounded-xl overflow-hidden border border-white/10">
+              <!-- [영화 포스터 넣는 곳] 아래 src 주소를 원하는 포스터로 교체하세요 -->
+              <img src="https://placehold.co/400x600/141418/b9a6d8?text=The+Seventh+Seal" alt="제7의 봉인 포스터" class="poster w-full h-full object-cover" />
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold tracking-widest text-gold-400">No.01</span>
+                <span class="h-px w-6 bg-white/20"></span>
+                <span class="text-xs text-neutral-500">1957 · 스웨덴 · 드라마·판타지</span>
+              </div>
+              <h3 class="font-display text-2xl md:text-3xl font-bold text-white">제7의 봉인 <span class="text-neutral-500 font-normal text-lg">The Seventh Seal</span></h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/10">죽음</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">신의 침묵</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">신앙</span>
+              </div>
+              <h4 class="text-sm font-semibold tracking-widest text-neutral-400 uppercase mt-6 mb-2">줄거리</h4>
+              <p class="text-sm md:text-[15px] leading-relaxed text-neutral-300">
+                십자군에서 돌아온 기사 안톤스 블록은 흑사병이 휩쓴 스웨덴 해안에서 죽음과 체스를
+                둔다. 한 판의 체스가 끝날 때까지 목숨을 부지하려는 기사의 저항 속에 신의 침묵과
+                인간의 고뇌가 교차한다. 곡예사 일가의 순수한 삶만이 유일한 구원처럼 빛난다.
+                마침내 죽음의 무도가 언덕 위를 스쳐 지나간다.
+              </p>
+            </div>
+          </article>
+
+          <article class="movie-card grid md:grid-cols-[260px_1fr] gap-6 md:gap-10 items-start">
+            <div class="relative aspect-[2/3] rounded-xl overflow-hidden border border-white/10">
+              <!-- [영화 포스터 넣는 곳] 아래 src 주소를 원하는 포스터로 교체하세요 -->
+              <img src="https://placehold.co/400x600/141418/b9a6d8?text=Persona" alt="페르소나 포스터" class="poster w-full h-full object-cover" />
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold tracking-widest text-gold-400">No.02</span>
+                <span class="h-px w-6 bg-white/20"></span>
+                <span class="text-xs text-neutral-500">1966 · 스웨덴 · 드라마</span>
+              </div>
+              <h3 class="font-display text-2xl md:text-3xl font-bold text-white">페르소나 <span class="text-neutral-500 font-normal text-lg">Persona</span></h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/10">자아</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">정체성</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">침묵</span>
+              </div>
+              <h4 class="text-sm font-semibold tracking-widest text-neutral-400 uppercase mt-6 mb-2">줄거리</h4>
+              <p class="text-sm md:text-[15px] leading-relaxed text-neutral-300">
+                무대 위에서 갑자기 침묵한 배우 엘마를 간호하기 위해 간호사 알마와 함께 섬으로
+                향한다. 말하지 않는 엘마 앞에서 알마는 자신의 가장 어두운 비밀을 쏟아낸다. 두
+                여성의 정체성은 서로 스며들어 경계가 무너지고, 얼굴이 겹쳐지는 순간 자아가 타자와
+                녹아드는 실존의 미로가 응축된다. 언어와 자아의 한계를 해체하는 영화적 실험이다.
+              </p>
+            </div>
+          </article>
+
+          <article class="movie-card grid md:grid-cols-[260px_1fr] gap-6 md:gap-10 items-start">
+            <div class="relative aspect-[2/3] rounded-xl overflow-hidden border border-white/10">
+              <!-- [영화 포스터 넣는 곳] 아래 src 주소를 원하는 포스터로 교체하세요 -->
+              <img src="https://placehold.co/400x600/141418/b9a6d8?text=Wild+Strawberries" alt="들꽃 포스터" class="poster w-full h-full object-cover" />
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold tracking-widest text-gold-400">No.03</span>
+                <span class="h-px w-6 bg-white/20"></span>
+                <span class="text-xs text-neutral-500">1957 · 스웨덴 · 드라마</span>
+              </div>
+              <h3 class="font-display text-2xl md:text-3xl font-bold text-white">들꽃 <span class="text-neutral-500 font-normal text-lg">Wild Strawberries</span></h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/10">회한</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">화해</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10">기억</span>
+              </div>
+              <h4 class="text-sm font-semibold tracking-widest text-neutral-400 uppercase mt-6 mb-2">줄거리</h4>
+              <p class="text-sm md:text-[15px] leading-relaxed text-neutral-300">
+                늙은 의사 이사크 보리는 명예박사 수여식을 위해 먼 길을 떠나며 과거의 기억과 후회를
+                만난다. 차가운 학자였던 그는 잃어버린 사랑과 가족과의 단절을 꿈과 회상 속에서
+                마주한다. 들딸기밭의 기억이 환기하는 온기는 삶의 끝에서 비로소 용서받고 싶은 한
+                인간의 영적 여정을 그린다. 회한과 화해의 잔잔한 명작이다.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <nav class="mt-20 pt-8 border-t border-white/5 flex items-center justify-between text-sm">
+          <a href="#" onclick="showDetail('kubrick');return false;" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition">
+            <span class="text-gold-400 group-hover:-translate-x-1 transition">←</span>
+            <span><span class="block text-xs text-neutral-600">이전 감독</span>스탠리 큐브릭</span>
           </a>
           <a href="#" onclick="showDetail('bong');return false;" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition text-right">
             <span><span class="block text-xs text-neutral-600">다음 감독</span>봉준호</span>
