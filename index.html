@@ -123,11 +123,11 @@
         </div>
 
         <!-- 카드 그리드 -->
-        <div id="masterpieces" class="flex flex-wrap justify-center gap-7 lg:gap-8">
+        <div id="masterpieces" class="grid grid-cols-1 md:grid-cols-12 gap-7 lg:gap-8">
 
           <!-- 카드 1: 봉준호 -->
-          <a href="#" onclick="showDetail('bong');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
-            <div class="relative aspect-[3/4] overflow-hidden">
+          <a href="#" onclick="showDetail('bong');return false;" class="card-lift group flex flex-col md:col-span-8 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+            <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="봉준호.jpg" alt="봉준호 감독" class="card-img w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-ink-800 via-ink-800/30 to-transparent"></div>
@@ -137,7 +137,13 @@
                 <span class="text-xs font-medium tracking-[0.2em] text-neutral-300 uppercase">1st</span>
               </div>
             </div>
-            <div class="p-7">
+            <div class="relative p-7 flex-1">
+              <div class="absolute -top-7 left-6 -rotate-6 z-10">
+                <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-gold-300 to-gold-600 text-ink-950 shadow-xl shadow-black/50 border-2 border-gold-200/50">
+                  <span class="text-lg font-extrabold leading-none">1</span>
+                  <span class="text-[8px] font-bold tracking-wider leading-none mt-0.5">위</span>
+                </div>
+              </div>
               <h3 class="font-display text-2xl font-bold text-white">봉준호</h3>
               <p class="text-sm text-neutral-500 mt-1">Bong Joon-ho · 한국</p>
               <div class="flex flex-wrap gap-2 mt-5">
@@ -154,8 +160,8 @@
           </a>
 
           <!-- 카드 2: 크리스토퍼 놀란 -->
-          <a href="#" onclick="showDetail('nolan');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
-            <div class="relative aspect-[3/4] overflow-hidden">
+          <a href="#" onclick="showDetail('nolan');return false;" class="card-lift group flex flex-col md:col-span-4 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+            <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="크리스토퍼 놀란.jpg" alt="크리스토퍼 놀란 감독" class="card-img w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-ink-800 via-ink-800/30 to-transparent"></div>
@@ -165,7 +171,13 @@
                 <span class="text-xs font-medium tracking-[0.2em] text-neutral-300 uppercase">2nd</span>
               </div>
             </div>
-            <div class="p-7">
+            <div class="relative p-7 flex-1">
+              <div class="absolute -top-7 left-6 -rotate-6 z-10">
+                <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-gold-300 to-gold-600 text-ink-950 shadow-xl shadow-black/50 border-2 border-gold-200/50">
+                  <span class="text-lg font-extrabold leading-none">2</span>
+                  <span class="text-[8px] font-bold tracking-wider leading-none mt-0.5">위</span>
+                </div>
+              </div>
               <h3 class="font-display text-2xl font-bold text-white">크리스토퍼 놀란</h3>
               <p class="text-sm text-neutral-500 mt-1">Christopher Nolan · 영국·미국</p>
               <div class="flex flex-wrap gap-2 mt-5">
@@ -182,8 +194,8 @@
           </a>
 
           <!-- 카드 3: 마틴 스코세이지 -->
-          <a href="#" onclick="showDetail('scorsese');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
-            <div class="relative aspect-[3/4] overflow-hidden">
+          <a href="#" onclick="showDetail('scorsese');return false;" class="card-lift group flex flex-col md:col-span-4 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+            <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="마틴 스코세이지.jpg" alt="마틴 스코세이지 감독" class="card-img w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-ink-800 via-ink-800/30 to-transparent"></div>
@@ -193,7 +205,13 @@
                 <span class="text-xs font-medium tracking-[0.2em] text-neutral-300 uppercase">3rd</span>
               </div>
             </div>
-            <div class="p-7">
+            <div class="relative p-7 flex-1">
+              <div class="absolute -top-7 left-6 -rotate-6 z-10">
+                <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-gold-300 to-gold-600 text-ink-950 shadow-xl shadow-black/50 border-2 border-gold-200/50">
+                  <span class="text-lg font-extrabold leading-none">3</span>
+                  <span class="text-[8px] font-bold tracking-wider leading-none mt-0.5">위</span>
+                </div>
+              </div>
               <h3 class="font-display text-2xl font-bold text-white">마틴 스코세이지</h3>
               <p class="text-sm text-neutral-500 mt-1">Martin Scorsese · 미국</p>
               <div class="flex flex-wrap gap-2 mt-5">
@@ -210,8 +228,8 @@
           </a>
 
           <!-- 카드 4: 스탠리 큐브릭 -->
-          <a href="#" onclick="showDetail('kubrick');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
-            <div class="relative aspect-[3/4] overflow-hidden">
+          <a href="#" onclick="showDetail('kubrick');return false;" class="card-lift group flex flex-col md:col-span-8 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+            <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="https://placehold.co/400x600/141418/8aa3d8?text=Stanley+Kubrick" alt="스탠리 큐브릭 감독" class="card-img w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-ink-800 via-ink-800/30 to-transparent"></div>
@@ -221,7 +239,13 @@
                 <span class="text-xs font-medium tracking-[0.2em] text-neutral-300 uppercase">4th</span>
               </div>
             </div>
-            <div class="p-7">
+            <div class="relative p-7 flex-1">
+              <div class="absolute -top-7 left-6 -rotate-6 z-10">
+                <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-gold-300 to-gold-600 text-ink-950 shadow-xl shadow-black/50 border-2 border-gold-200/50">
+                  <span class="text-lg font-extrabold leading-none">4</span>
+                  <span class="text-[8px] font-bold tracking-wider leading-none mt-0.5">위</span>
+                </div>
+              </div>
               <h3 class="font-display text-2xl font-bold text-white">스탠리 큐브릭</h3>
               <p class="text-sm text-neutral-500 mt-1">Stanley Kubrick · 미국</p>
               <div class="flex flex-wrap gap-2 mt-5">
@@ -238,8 +262,8 @@
           </a>
 
           <!-- 카드 5: 잉마르 베르히만 -->
-          <a href="#" onclick="showDetail('bergman');return false;" class="card-lift group block w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(50%-1rem)] relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
-            <div class="relative aspect-[3/4] overflow-hidden">
+          <a href="#" onclick="showDetail('bergman');return false;" class="card-lift group flex flex-col md:col-span-6 md:col-start-4 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+            <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="https://placehold.co/400x600/141418/b9a6d8?text=Ingmar+Bergman" alt="잉마르 베르히만 감독" class="card-img w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-ink-800 via-ink-800/30 to-transparent"></div>
@@ -249,7 +273,13 @@
                 <span class="text-xs font-medium tracking-[0.2em] text-neutral-300 uppercase">5th</span>
               </div>
             </div>
-            <div class="p-7">
+            <div class="relative p-7 flex-1">
+              <div class="absolute -top-7 left-6 -rotate-6 z-10">
+                <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-gold-300 to-gold-600 text-ink-950 shadow-xl shadow-black/50 border-2 border-gold-200/50">
+                  <span class="text-lg font-extrabold leading-none">5</span>
+                  <span class="text-[8px] font-bold tracking-wider leading-none mt-0.5">위</span>
+                </div>
+              </div>
               <h3 class="font-display text-2xl font-bold text-white">잉마르 베르히만</h3>
               <p class="text-sm text-neutral-500 mt-1">Ingmar Bergman · 스웨덴</p>
               <div class="flex flex-wrap gap-2 mt-5">
