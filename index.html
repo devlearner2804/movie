@@ -25,8 +25,8 @@
             display: ['Pretendard', 'ui-sans-serif', 'system-ui', 'sans-serif'],
           },
           colors: {
-            ink: { 950:'#08080a', 900:'#0c0c0f', 800:'#141418', 700:'#1d1d22' },
-            gold: { 300:'#efd99a', 400:'#e4c977', 500:'#cba94e', 600:'#a88838' },
+            ink: { 950:'#000000', 900:'#000000', 800:'#202020', 700:'#181818' },
+            gold: { 300:'#FFCE3E', 400:'#FFC000', 500:'#FFC000', 600:'#917300' },
           },
         },
       },
@@ -35,7 +35,11 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Pretendard', sans-serif; }
+    body { font-family: 'Pretendard', sans-serif; background:#000000; }
+    /* Lamborghini: 대문자 디스플레이 보이스 + 타이트 아키텍처 */
+    .font-display { text-transform: uppercase; letter-spacing: -0.015em; line-height: 1.04; }
+    /* Lamborghini: 직각 — 카드/버튼/입력에 border-radius 0 */
+    .card-lift, .movie-card, button, input, textarea { border-radius: 0 !important; }
     .view { display: none; }
     .view.active { display: block; }
 
@@ -99,10 +103,10 @@
         </p>
 
         <div class="fade-up d3 mt-12 flex items-center justify-center gap-4">
-          <a href="#directors" class="px-8 py-3.5 rounded-full bg-gold-500 text-ink-950 text-sm font-semibold tracking-wide hover:bg-gold-400 transition shadow-lg shadow-gold-500/20">
+          <a href="#directors" class="px-8 py-3.5 bg-gold-400 text-black text-sm font-semibold tracking-wide uppercase hover:bg-gold-600 transition">
             거장 만나보기
           </a>
-          <a href="#masterpieces" class="px-8 py-3.5 rounded-full border border-white/15 text-sm font-medium text-neutral-300 hover:border-white/40 hover:text-white transition">
+          <a href="#masterpieces" class="px-8 py-3.5 border border-white/50 text-sm font-medium text-white uppercase hover:border-white transition">
             명작 둘러보기
           </a>
         </div>
