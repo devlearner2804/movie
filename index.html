@@ -112,7 +112,7 @@
     </section>
 
     <!-- ================= DIRECTORS ================= -->
-    <section id="directors" class="relative py-14 md:py-16 px-6 lg:px-10">
+    <section id="directors" class="relative py-14 md:py-16 px-6 lg:px-10 scroll-mt-24">
       <div class="max-w-7xl mx-auto">
         <div class="max-w-2xl mb-16">
           <p class="text-gold-400/90 text-xs font-medium tracking-[0.3em] uppercase mb-4">The Directors</p>
@@ -217,7 +217,7 @@
                   <span class="text-lg font-extrabold leading-none">3</span>
                   <span class="text-[8px] font-bold tracking-wider leading-none mt-0.5">위</span>
                 </div>
-              </div>
+               </div>
               <h3 class="font-display text-2xl font-bold text-white">마틴 스코세이지</h3>
               <p class="text-sm text-neutral-500 mt-1">Martin Scorsese · 미국 · <span data-click-count="scorsese" class="text-gold-300/80">0회</span></p>
               <div class="flex flex-wrap gap-2 mt-5">
@@ -306,7 +306,7 @@
     </section>
 
     <!-- ================= GUESTBOOK ================= -->
-    <section id="guestbook" class="relative py-20 md:py-28 px-6 lg:px-10 border-t border-white/5">
+    <section id="guestbook" class="relative py-20 md:py-28 px-6 lg:px-10 border-t border-white/5 scroll-mt-24">
       <div class="max-w-3xl mx-auto">
         <div class="mb-10 text-center">
           <p class="text-gold-400/90 text-xs font-medium tracking-[0.3em] uppercase mb-4">Guestbook</p>
@@ -1054,21 +1054,24 @@
 
     const DIRECTOR_IDS = ['bong','nolan','scorsese','kubrick','bergman'];
 
-    function showView(id) {
+    function showView(id, scrollTop) {
+      if (scrollTop === undefined) scrollTop = true;
       document.querySelectorAll('.view').forEach(function (v) { v.classList.remove('active'); });
       var el = document.getElementById('view-' + id);
       if (el) el.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (scrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function showDetail(name) { showView(name); }
+    function showDetail(name) { showView(name, true); }
     function onCardClick(id, name) { bumpClick(id, name); showDetail(id); }
     function goMain(anchor) {
-      showView('main');
+      showView('main', false);
       if (anchor) {
         setTimeout(function () {
           var target = document.getElementById(anchor);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        }, 80);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
