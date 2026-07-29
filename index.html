@@ -9,6 +9,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Pretendard (고급스러운 산세리프, 한글 가독성) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <!-- Supabase JS Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <!-- Tailwind 커스텀 설정 -->
   <script>
@@ -62,7 +64,8 @@
       <ul class="flex items-center gap-7 md:gap-10 text-xs md:text-sm font-medium tracking-wide text-neutral-400">
         <li><a href="#" onclick="goMain('hero');return false;" class="hover:text-white transition">Home</a></li>
         <li><a href="#" onclick="goMain('directors');return false;" class="hover:text-white transition">Directors</a></li>
-        <li><a href="#" onclick="goMain('masterpieces');return false;" class="hover:text-white transition">Masterpieces</a></li>
+          <li><a href="#" onclick="goMain('masterpieces');return false;" class="hover:text-white transition">Masterpieces</a></li>
+          <li><a href="#" onclick="goMain('guestbook');return false;" class="hover:text-white transition">Guestbook</a></li>
       </ul>
     </nav>
   </header>
@@ -109,7 +112,7 @@
     </section>
 
     <!-- ================= DIRECTORS ================= -->
-    <section id="directors" class="relative py-24 md:py-32 px-6 lg:px-10">
+    <section id="directors" class="relative py-14 md:py-16 px-6 lg:px-10">
       <div class="max-w-7xl mx-auto">
         <div class="max-w-2xl mb-16">
           <p class="text-gold-400/90 text-xs font-medium tracking-[0.3em] uppercase mb-4">The Directors</p>
@@ -120,13 +123,16 @@
             카메라를 통해 시대를 응시한 거장들. 그들의 작품은 단순한 영화를 넘어,
             인간 존재와 사회 구조에 대한 하나의 철학적 성찰이다.
           </p>
+          <button onclick="resetClicks()" class="mt-6 inline-flex items-center gap-1.5 text-xs px-3.5 py-1.5 rounded-full border border-white/10 text-neutral-400 hover:text-white hover:border-gold-400/50 transition">
+            <span>↺</span> 조회수 초기화
+          </button>
         </div>
 
         <!-- 카드 그리드 -->
         <div id="masterpieces" class="grid grid-cols-1 md:grid-cols-12 gap-7 lg:gap-8">
 
           <!-- 카드 1: 봉준호 -->
-          <a href="#" onclick="showDetail('bong');return false;" class="card-lift group flex flex-col md:col-span-8 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+          <a href="#" onclick="onCardClick('bong','봉준호');return false;" class="card-lift group flex flex-col md:col-span-8 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
             <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="봉준호.jpg" alt="봉준호 감독" class="card-img w-full h-full object-cover" />
@@ -145,7 +151,7 @@
                 </div>
               </div>
               <h3 class="font-display text-2xl font-bold text-white">봉준호</h3>
-              <p class="text-sm text-neutral-500 mt-1">Bong Joon-ho · 한국</p>
+              <p class="text-sm text-neutral-500 mt-1">Bong Joon-ho · 한국 · <span data-click-count="bong" class="text-gold-300/80">0회</span></p>
               <div class="flex flex-wrap gap-2 mt-5">
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/5">계급 갈등</span>
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/5">사회 부조리</span>
@@ -160,7 +166,7 @@
           </a>
 
           <!-- 카드 2: 크리스토퍼 놀란 -->
-          <a href="#" onclick="showDetail('nolan');return false;" class="card-lift group flex flex-col md:col-span-4 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+          <a href="#" onclick="onCardClick('nolan','크리스토퍼 놀란');return false;" class="card-lift group flex flex-col md:col-span-4 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
             <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="크리스토퍼 놀란.jpg" alt="크리스토퍼 놀란 감독" class="card-img w-full h-full object-cover" />
@@ -179,7 +185,7 @@
                 </div>
               </div>
               <h3 class="font-display text-2xl font-bold text-white">크리스토퍼 놀란</h3>
-              <p class="text-sm text-neutral-500 mt-1">Christopher Nolan · 영국·미국</p>
+              <p class="text-sm text-neutral-500 mt-1">Christopher Nolan · 영국·미국 · <span data-click-count="nolan" class="text-gold-300/80">0회</span></p>
               <div class="flex flex-wrap gap-2 mt-5">
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/5">시공간</span>
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/5">고뇌</span>
@@ -194,7 +200,7 @@
           </a>
 
           <!-- 카드 3: 마틴 스코세이지 -->
-          <a href="#" onclick="showDetail('scorsese');return false;" class="card-lift group flex flex-col md:col-span-4 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+          <a href="#" onclick="onCardClick('scorsese','마틴 스코세이지');return false;" class="card-lift group flex flex-col md:col-span-4 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
             <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="마틴 스코세이지.jpg" alt="마틴 스코세이지 감독" class="card-img w-full h-full object-cover" />
@@ -213,7 +219,7 @@
                 </div>
               </div>
               <h3 class="font-display text-2xl font-bold text-white">마틴 스코세이지</h3>
-              <p class="text-sm text-neutral-500 mt-1">Martin Scorsese · 미국</p>
+              <p class="text-sm text-neutral-500 mt-1">Martin Scorsese · 미국 · <span data-click-count="scorsese" class="text-gold-300/80">0회</span></p>
               <div class="flex flex-wrap gap-2 mt-5">
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/5">탐욕</span>
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/5">소외</span>
@@ -228,7 +234,7 @@
           </a>
 
           <!-- 카드 4: 스탠리 큐브릭 -->
-          <a href="#" onclick="showDetail('kubrick');return false;" class="card-lift group flex flex-col md:col-span-8 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+          <a href="#" onclick="onCardClick('kubrick','스탠리 큐브릭');return false;" class="card-lift group flex flex-col md:col-span-8 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
             <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="https://placehold.co/400x600/141418/8aa3d8?text=Stanley+Kubrick" alt="스탠리 큐브릭 감독" class="card-img w-full h-full object-cover" />
@@ -247,7 +253,7 @@
                 </div>
               </div>
               <h3 class="font-display text-2xl font-bold text-white">스탠리 큐브릭</h3>
-              <p class="text-sm text-neutral-500 mt-1">Stanley Kubrick · 미국</p>
+              <p class="text-sm text-neutral-500 mt-1">Stanley Kubrick · 미국 · <span data-click-count="kubrick" class="text-gold-300/80">0회</span></p>
               <div class="flex flex-wrap gap-2 mt-5">
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/5">통제와 광기</span>
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/5">디스토피아</span>
@@ -262,7 +268,7 @@
           </a>
 
           <!-- 카드 5: 잉마르 베르히만 -->
-          <a href="#" onclick="showDetail('bergman');return false;" class="card-lift group flex flex-col md:col-span-6 md:col-start-4 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
+          <a href="#" onclick="onCardClick('bergman','잉마르 베르히만');return false;" class="card-lift group flex flex-col md:col-span-6 md:col-start-4 relative rounded-2xl overflow-hidden bg-ink-800 border border-white/5">
             <div class="relative h-60 sm:h-72 md:h-80 overflow-hidden">
               <!-- [감독 사진 넣는 곳] 아래 src 주소를 원하는 사진으로 교체하세요 -->
               <img src="https://placehold.co/400x600/141418/b9a6d8?text=Ingmar+Bergman" alt="잉마르 베르히만 감독" class="card-img w-full h-full object-cover" />
@@ -281,7 +287,7 @@
                 </div>
               </div>
               <h3 class="font-display text-2xl font-bold text-white">잉마르 베르히만</h3>
-              <p class="text-sm text-neutral-500 mt-1">Ingmar Bergman · 스웨덴</p>
+              <p class="text-sm text-neutral-500 mt-1">Ingmar Bergman · 스웨덴 · <span data-click-count="bergman" class="text-gold-300/80">0회</span></p>
               <div class="flex flex-wrap gap-2 mt-5">
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-gold-300 border border-white/5">신과 죽음</span>
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/5">실존</span>
@@ -296,6 +302,29 @@
           </a>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ================= GUESTBOOK ================= -->
+    <section id="guestbook" class="relative py-20 md:py-28 px-6 lg:px-10 border-t border-white/5">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-10 text-center">
+          <p class="text-gold-400/90 text-xs font-medium tracking-[0.3em] uppercase mb-4">Guestbook</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white">방명록</h2>
+          <p class="mt-4 text-neutral-400 leading-relaxed">거장들의 철학에 한 줄 감상을 남겨보세요. 실시간으로 갱신됩니다.</p>
+        </div>
+
+        <form onsubmit="submitGuestbook(event)" class="bg-ink-800/60 border border-white/5 rounded-2xl p-6 mb-10">
+          <input id="gb-name" type="text" required maxlength="30" placeholder="이름" class="w-full mb-3 bg-ink-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-gold-400/50 transition" />
+          <textarea id="gb-msg" required maxlength="200" rows="2" placeholder="메세지를 입력하세요" class="w-full mb-3 bg-ink-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-gold-400/50 transition resize-none"></textarea>
+          <div class="flex items-center justify-between">
+            <span id="gb-status" class="text-xs text-neutral-500"></span>
+            <button type="submit" class="px-6 py-2.5 rounded-full bg-gold-500 text-ink-950 text-sm font-semibold hover:bg-gold-400 transition">남기기</button>
+          </div>
+        </form>
+
+        <div id="gb-list" class="space-y-4"></div>
+        <p id="gb-empty" class="text-center text-sm text-neutral-600 py-8">아직 글이 없습니다. 첫 글을 남겨보세요.</p>
       </div>
     </section>
   </div>
@@ -1010,13 +1039,21 @@
         <a href="#" onclick="goMain('hero');return false;" class="hover:text-neutral-300 transition">Home</a>
         <a href="#" onclick="goMain('directors');return false;" class="hover:text-neutral-300 transition">Directors</a>
         <a href="#" onclick="goMain('masterpieces');return false;" class="hover:text-neutral-300 transition">Masterpieces</a>
+        <a href="#" onclick="goMain('guestbook');return false;" class="hover:text-neutral-300 transition">Guestbook</a>
       </nav>
       <p class="text-xs text-neutral-600 tracking-wide">© 2026 AI Cinema Selection. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ================= 뷰 전환 스크립트 ================= -->
+  <!-- ================= 뷰 전환 + 클릭수 스크립트 ================= -->
   <script>
+    const SUPA_URL = 'https://tekpqdpsbumqohgcekvw.supabase.co';
+    const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRla3BxZHBzYnVtcW9oZ2Nla3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUyMDEyMDEsImV4cCI6MjEwMDc3NzIwMX0.apRhC37OAl1j_BP5GzVdbwjrNmdWRPMZUz62W_WUQP4';
+    let supabase = null;
+    try { supabase = window.supabase.createClient(SUPA_URL, SUPA_KEY); } catch (e) { console.error('Supabase init failed:', e); }
+
+    const DIRECTOR_IDS = ['bong','nolan','scorsese','kubrick','bergman'];
+
     function showView(id) {
       document.querySelectorAll('.view').forEach(function (v) { v.classList.remove('active'); });
       var el = document.getElementById('view-' + id);
@@ -1024,6 +1061,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     function showDetail(name) { showView(name); }
+    function onCardClick(id, name) { bumpClick(id, name); showDetail(id); }
     function goMain(anchor) {
       showView('main');
       if (anchor) {
@@ -1033,6 +1071,92 @@
         }, 80);
       }
     }
+
+    function setCountEl(id, n) {
+      document.querySelectorAll('[data-click-count="' + id + '"]').forEach(function (el) {
+        el.textContent = (Number(n) || 0) + '회';
+      });
+    }
+    async function loadClicks() {
+      if (!supabase) return;
+      const { data, error } = await supabase.from('director_clicks').select('director_id, count');
+      if (error) { console.error('loadClicks:', error); return; }
+      (data || []).forEach(function (r) { setCountEl(r.director_id, r.count); });
+    }
+    async function bumpClick(id, name) {
+      if (!supabase) return;
+      try {
+        const { data, error } = await supabase.rpc('increment_click', { director_id: id, director_name: name });
+        if (error) { console.error('bumpClick:', error); return; }
+        setCountEl(id, data);
+      } catch (e) { console.error('bumpClick:', e); }
+    }
+    async function resetClicks() {
+      if (!supabase) return;
+      if (!confirm('모든 감독의 클릭수를 0으로 초기화할까요?')) return;
+      const { error } = await supabase.rpc('reset_clicks');
+      if (error) { console.error('resetClicks:', error); alert('초기화 실패: ' + error.message); return; }
+      DIRECTOR_IDS.forEach(function (id) { setCountEl(id, 0); });
+    }
+
+    // ---- 방명록 ----
+    function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+    function formatGbTime(ts){ try { return new Date(ts).toLocaleString('ko-KR', { month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' }); } catch(e){ return ''; } }
+    function gbEntryHtml(r){
+      return '<div class="bg-ink-800/40 border border-white/5 rounded-xl p-5">'
+        + '<div class="flex items-center justify-between mb-2">'
+        + '<span class="font-semibold text-white text-sm">' + escapeHtml(r.name) + '</span>'
+        + '<span class="text-xs text-neutral-600">' + formatGbTime(r.created_at) + '</span>'
+        + '</div>'
+        + '<p class="text-sm text-neutral-300 leading-relaxed break-words">' + escapeHtml(r.message) + '</p>'
+        + '</div>';
+    }
+    function gbToggleEmpty(){
+      var list = document.getElementById('gb-list');
+      var empty = document.getElementById('gb-empty');
+      if(!list || !empty) return;
+      empty.classList.toggle('hidden', list.children.length > 0);
+    }
+    function gbPrepend(r){
+      var list = document.getElementById('gb-list');
+      if(!list) return;
+      list.insertAdjacentHTML('afterbegin', gbEntryHtml(r));
+      gbToggleEmpty();
+    }
+    async function loadGuestbook(){
+      if(!supabase) return;
+      const { data, error } = await supabase.from('guestbook').select('name,message,created_at').order('created_at', { ascending:false }).limit(100);
+      if(error){ console.error('loadGuestbook:', error); return; }
+      var list = document.getElementById('gb-list');
+      if(!list) return;
+      list.innerHTML = (data || []).map(gbEntryHtml).join('');
+      gbToggleEmpty();
+    }
+    async function submitGuestbook(e){
+      e.preventDefault();
+      if(!supabase){ return; }
+      var nameEl = document.getElementById('gb-name');
+      var msgEl = document.getElementById('gb-msg');
+      var status = document.getElementById('gb-status');
+      var name = (nameEl.value || '').trim();
+      var message = (msgEl.value || '').trim();
+      if(!name || !message){ if(status) status.textContent = '이름과 메세지를 모두 입력해 주세요.'; return; }
+      if(status) status.textContent = '';
+      const { error } = await supabase.from('guestbook').insert({ name:name, message:message });
+      if(error){ if(status) status.textContent = '전송 실패: ' + error.message; console.error(error); return; }
+      nameEl.value = ''; msgEl.value = '';
+      if(status){ status.textContent = '작성 완료!'; setTimeout(function(){ if(status) status.textContent = ''; }, 2000); }
+    }
+    function subscribeGuestbook(){
+      if(!supabase) return;
+      supabase.channel('guestbook-public')
+        .on('postgres_changes', { event:'INSERT', schema:'public', table:'guestbook' }, function(payload){
+          gbPrepend(payload.new);
+        })
+        .subscribe();
+    }
+
+    window.addEventListener('DOMContentLoaded', function () { loadClicks(); loadGuestbook(); subscribeGuestbook(); });
   </script>
 
 </body>
