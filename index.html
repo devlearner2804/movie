@@ -38,8 +38,8 @@
     body { font-family: 'Pretendard', sans-serif; background:#000000; }
     /* Lamborghini: 대문자 디스플레이 보이스 + 타이트 아키텍처 */
     .font-display { text-transform: uppercase; letter-spacing: -0.015em; line-height: 1.04; }
-    /* Lamborghini: 직각 — 카드/버튼/입력에 border-radius 0 */
-    .card-lift, .movie-card, button, input, textarea { border-radius: 0 !important; }
+    /* Lamborghini: 직각 — 모든 요소 border-radius 0 */
+    * { border-radius: 0 !important; }
     .view { display: none; }
     .view.active { display: block; }
 
@@ -130,7 +130,7 @@
             카메라를 통해 시대를 응시한 거장들. 그들의 작품은 단순한 영화를 넘어,
             인간 존재와 사회 구조에 대한 하나의 철학적 성찰이다.
           </p>
-          <button onclick="resetClicks()" class="mt-6 inline-flex items-center gap-1.5 text-xs px-3.5 py-1.5 rounded-full border border-white/10 text-neutral-400 hover:text-white hover:border-gold-400/50 transition">
+          <button onclick="resetClicks()" class="mt-6 inline-flex items-center gap-1.5 text-xs px-3.5 py-1.5 border border-white/50 text-neutral-400 hover:text-white hover:border-white transition uppercase tracking-wide">
             <span>↺</span> 조회수 초기화
           </button>
         </div>
@@ -326,7 +326,7 @@
           <textarea id="gb-msg" required maxlength="200" rows="2" placeholder="메세지를 입력하세요" class="w-full mb-3 bg-ink-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-gold-400/50 transition resize-none"></textarea>
           <div class="flex items-center justify-between">
             <span id="gb-status" class="text-xs text-neutral-500"></span>
-            <button type="submit" class="px-6 py-2.5 rounded-full bg-gold-500 text-ink-950 text-sm font-semibold hover:bg-gold-400 transition">남기기</button>
+            <button type="submit" class="px-6 py-2.5 bg-gold-400 text-black text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition">남기기</button>
           </div>
         </form>
 
