@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <!-- Supabase JS Client -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Tailwind 커스텀 설정 -->
   <script>
@@ -1146,14 +1149,15 @@
     }
     function gbStatus(msg, isErr){ var el = document.getElementById('gb-status'); if(!el) return; el.textContent = msg || ''; el.className = 'text-xs ' + (isErr ? 'text-red-400' : 'text-neutral-500'); }
     async function loadGuestbook(){
-      if(!supabase){ gbStatus('Supabase 연결 실패 - 라이브러리를 불러오지 못했습니다.', true); return; }
+      if(!supabase){ gbStatus('Supabase 미초기화 (라이브러리: ' + (typeof window.supabase !== 'undefined' ? 'OK' : '없음') + ')', true); return; }
+      gbStatus('불러오는 중...', false);
       const { data, error } = await supabase.from('guestbook').select('id,name,message,created_at').order('created_at', { ascending:false }).limit(100);
       if(error){ gbStatus('불러오기 실패: ' + error.message, true); console.error('loadGuestbook:', error); return; }
       var list = document.getElementById('gb-list');
       if(!list) return;
       list.innerHTML = (data || []).map(gbEntryHtml).join('');
       gbToggleEmpty();
-      gbStatus('', false);
+      gbStatus((data || []).length + '개 로드됨', false);
     }
     async function submitGuestbook(e){
       e.preventDefault();
@@ -1221,7 +1225,12 @@
         .subscribe();
     }
 
-    window.addEventListener('DOMContentLoaded', function () { loadClicks(); loadGuestbook(); subscribeGuestbook(); });
+    window.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.card-lift').forEach(function (el, i) { el.setAttribute('data-aos', 'fade-up'); el.setAttribute('data-aos-delay', String((i % 2) * 100)); });
+      var gf = document.querySelector('#guestbook form'); if (gf) gf.setAttribute('data-aos', 'fade-up');
+      if (window.AOS) AOS.init({ duration: 800, once: true, offset: 80 });
+      loadClicks(); loadGuestbook(); subscribeGuestbook();
+    });
   </script>
 
 </body>
